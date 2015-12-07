@@ -1,6 +1,6 @@
 server {
     listen 80;
-    server_name jenkins.*;
+    server_name _;
     return 301 https://$host$request_uri;
 }
 
@@ -20,6 +20,6 @@ server {
       proxy_pass          http://127.0.0.1:8080;
       proxy_read_timeout  90;
 
-      proxy_redirect      http://127.0.0.1:8080 https://jenkins.*;
+      proxy_redirect      http://127.0.0.1:8080 https://jenkins._;
     }
   }
