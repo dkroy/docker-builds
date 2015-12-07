@@ -1,0 +1,16 @@
+jenkins:
+    restart: always
+    build: ./jenkins/
+    ports:
+        - "8080:8080"
+nginx:
+  restart: always
+  build: ./nginx/
+  ports:
+    - "80:80"
+  volumes:
+    - /www/static
+  volumes_from:
+    - jenkins
+  links:
+    - jenkins:jenkins
