@@ -20,6 +20,9 @@ RUN for plugin in shiningpanda greenballs scm-api git-client git ws-cleanup ;\
 ADD ./dockerjenkins.sh /usr/local/bin/dockerjenkins.sh
 RUN chmod +x /usr/local/bin/dockerjenkins.sh
 
+# Adding required libs
+apt-get -y install build-essential python-dev
+
 VOLUME /var/lib/docker
 
 EXPOSE 8080
