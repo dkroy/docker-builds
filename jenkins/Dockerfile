@@ -21,7 +21,7 @@ ADD ./dockerjenkins.sh /usr/local/bin/dockerjenkins.sh
 RUN chmod +x /usr/local/bin/dockerjenkins.sh
 
 # Adding required libs
-apt-get -y install build-essential python-dev
+RUN apt-get install -y build-essential python-dev
 
 VOLUME /var/lib/docker
 
