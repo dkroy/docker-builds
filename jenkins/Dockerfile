@@ -21,9 +21,12 @@ ADD ./dockerjenkins.sh /usr/local/bin/dockerjenkins.sh
 RUN chmod +x /usr/local/bin/dockerjenkins.sh
 
 # Adding required libs
-RUN apt-get install -y build-essential python-dev
+RUN apt-get install -y build-essential python-dev libffi-dev 
+RUN apt-get update 
+RUN apt-get install -y libssl-dev libxml2-dev libxslt1-dev
 
 VOLUME /var/lib/docker
+VOLUME /opt/jenkins/data
 
 EXPOSE 8080
 
